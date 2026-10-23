@@ -1,20 +1,107 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Claudia Al-Amir — Data Analyst Portfolio</title>
-    <meta name="description" content="Claudia Al-Amir's data analytics portfolio featuring Excel, Power BI, SQL, Python, Tableau, business analysis, data visualization, and analytical storytelling projects." />
-    <meta property="og:title" content="Claudia Al-Amir — Data Analyst Portfolio" />
-    <meta property="og:description" content="Data analytics projects spanning Excel, Power BI, SQL, Python, Tableau, and business intelligence." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bishoo11.github.io/little-starting-place/" />
-    <meta name="twitter:card" content="summary" />
-    <link rel="canonical" href="https://bishoo11.github.io/little-starting-place/" />
-    <link rel="icon" href="/little-starting-place/favicon.ico" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Claudia Al-Amir's data analytics portfolio.">
+<title>Claudia Al-Amir — Data Analyst Portfolio</title>
+<style>
+:root{--paper:#f7f2ed;--nude:#e8d8cf;--burgundy:#702d3b;--deep:#4b1d29;--ink:#211b1c;--muted:#74686a;--line:#dfd2cc;--white:#fffdfa}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}a:focus-visible{outline:3px solid var(--burgundy);outline-offset:4px}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{border-bottom:1px solid var(--line);padding:20px 0}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:750}.monogram{width:38px;height:38px;display:grid;place-items:center;background:var(--burgundy);color:white;border-radius:50%;font:19px Georgia,serif}.navlinks{display:flex;gap:25px;align-items:center}.navlinks a{text-decoration:none;font-size:14px;color:var(--muted)}.navlinks .outline{border:1px solid var(--burgundy);padding:8px 13px;color:var(--burgundy)}
+.hero{padding:84px 0 75px;display:grid;grid-template-columns:1.2fr .8fr;gap:55px;align-items:center}.eyebrow{color:var(--burgundy);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:"";display:inline-block;width:25px;height:1px;background:currentColor;vertical-align:middle;margin-right:10px}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.045em;line-height:1.06}h1{font-size:clamp(48px,6.5vw,82px);margin:22px 0}h1 em{color:var(--burgundy)}.muted{color:var(--muted)}.hero-copy{max-width:570px;color:var(--muted);font-size:17px;line-height:1.75}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}.btn{display:inline-block;padding:12px 17px;text-decoration:none;border:1px solid var(--burgundy);font-size:14px;font-weight:700}.primary{background:var(--burgundy);color:white}.secondary{color:var(--burgundy)}.art{background:var(--nude);padding:28px;min-height:360px;box-shadow:15px 15px 0 var(--deep);transform:rotate(1deg);display:flex;flex-direction:column;justify-content:space-between}.art-top{display:flex;justify-content:space-between;color:var(--burgundy);font-size:10px;letter-spacing:.15em;text-transform:uppercase}.art-title{font:clamp(37px,4vw,52px)/.98 Georgia,serif;color:var(--deep);margin:36px 0}.bars{height:75px;display:flex;align-items:end;gap:8px}.bars i{display:block;flex:1;background:var(--burgundy)}.bars i:nth-child(1){height:35%;opacity:.35}.bars i:nth-child(2){height:55%;opacity:.5}.bars i:nth-child(3){height:45%;opacity:.65}.bars i:nth-child(4){height:82%}.bars i:nth-child(5){height:68%;opacity:.8}.bars i:nth-child(6){height:100%}
+.ticker{border-block:1px solid var(--line);padding:16px 0;color:var(--burgundy);font-size:12px;letter-spacing:.16em;text-transform:uppercase}.ticker .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}section.content{padding:78px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}.section-head h2,.skills h2,.about h2,.contact h2{font-size:clamp(36px,4.5vw,55px);margin:10px 0}.section-head p{max-width:390px;color:var(--muted);font-size:14px}.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.project{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column}.cover{min-height:190px;background:var(--nude);padding:20px;position:relative;overflow:hidden}.project:nth-child(2) .cover{background:#e2d4cc}.project:nth-child(3) .cover{background:#e6e0db}.cover-top{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--burgundy)}.cover-num{position:absolute;right:17px;top:42px;font:66px Georgia,serif;color:#702d3b2c}.cover-title{position:absolute;bottom:15px;left:20px;font:38px/.98 Georgia,serif;color:var(--deep);letter-spacing:-.04em}.cover:after{content:"";position:absolute;right:20px;bottom:23px;width:50px;height:2px;background:var(--burgundy)}.project-body{padding:21px;display:flex;flex-direction:column;flex:1}.type{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--burgundy);font-weight:800}.project h3{font-size:25px;margin:9px 0}.project p{font-size:14px;line-height:1.7;color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:auto 0 20px}.tag{border:1px solid var(--line);padding:4px 7px;font-size:11px;color:var(--muted)}.project-link{border-top:1px solid var(--line);padding-top:14px;text-decoration:none;color:var(--burgundy);font-size:13px;font-weight:750;display:flex;justify-content:space-between}
+.about{background:var(--deep);color:var(--paper);padding:75px 0}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px}.about .eyebrow{color:var(--nude)}.about-copy{color:#f7f2edc9;font-size:15px}.quote{border-left:1px solid #ffffff66;padding-left:17px;color:var(--nude);font:italic 19px/1.4 Georgia,serif;margin-top:25px}.skills-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px}.skills-list{display:grid;grid-template-columns:1fr 1fr;gap:0 25px}.skill{padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:650}.skill span{color:var(--burgundy);font:18px Georgia,serif;margin-right:10px}.contact{background:var(--nude);padding:70px 0}.contact-grid{display:flex;justify-content:space-between;align-items:end;gap:30px}.contact p{color:var(--muted);max-width:520px;font-size:14px}footer{padding:22px 0;font-size:11px;color:var(--muted)}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.foot a{text-decoration:none;margin-left:14px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:35px;padding:60px 0}.art{min-height:300px}.projects{grid-template-columns:1fr 1fr}.about-grid,.skills-grid{grid-template-columns:1fr;gap:25px}.section-head{display:block}.contact-grid{display:block}}@media(max-width:560px){.wrap{width:calc(100% - 30px)}.navlinks{gap:12px}.navlinks a{font-size:11px}.navlinks a:nth-child(2){display:none}.projects{grid-template-columns:1fr}.skills-list{grid-template-columns:1fr}section.content{padding:55px 0}.art{box-shadow:8px 8px 0 var(--deep)}}
+.hero-name{font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,7vw,76px);line-height:.98;letter-spacing:-.055em;font-weight:700;color:var(--burgundy);margin:0 0 22px}
+
+/* A little motion and personality, without losing the clean editorial feel */
+.hero-name{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,6vw,68px);line-height:.98;letter-spacing:-.055em;font-weight:700;color:var(--burgundy);margin:0 0 20px;animation:rise-in .75s both}
+.hero .eyebrow,.hero h1,.hero-copy,.hero .actions{animation:rise-in .8s both}
+.hero h1{animation-delay:.08s}.hero-copy{animation-delay:.16s}.hero .actions{animation-delay:.23s}
+.art{position:relative;isolation:isolate;overflow:hidden;animation:float-card 6s ease-in-out infinite;transition:transform .35s ease,box-shadow .35s ease}
+.art:hover{transform:rotate(0deg) translateY(-5px);box-shadow:20px 20px 0 var(--deep)}
+.orbit-shape{position:absolute;width:170px;height:170px;border:1px solid #702d3b55;border-radius:50%;right:-34px;top:58px;animation:slow-spin 18s linear infinite;pointer-events:none}
+.orbit-shape:before,.orbit-shape:after{content:"";position:absolute;border:1px solid #702d3b55;border-radius:50%;inset:17px}
+.orbit-shape:after{inset:36px;background:#fffdfa35}
+.sparkle{position:absolute;color:var(--burgundy);z-index:1;line-height:1;pointer-events:none}
+.sparkle-one{right:33px;top:44px;font-size:28px;animation:twinkle 3s ease-in-out infinite}
+.sparkle-two{left:26px;bottom:80px;font-size:20px;animation:twinkle 3s ease-in-out infinite .8s}
+.bars i{transform-origin:bottom;animation:bar-grow .9s cubic-bezier(.2,.8,.2,1) both}
+.bars i:nth-child(2){animation-delay:.08s}.bars i:nth-child(3){animation-delay:.16s}.bars i:nth-child(4){animation-delay:.24s}.bars i:nth-child(5){animation-delay:.32s}.bars i:nth-child(6){animation-delay:.4s}
+.project{transition:transform .25s ease,box-shadow .25s ease}
+.project:hover{transform:translateY(-6px);box-shadow:0 14px 35px #4b1d2912}
+.project-link span{display:inline-block;transition:transform .2s ease}
+.project-link:hover span{transform:translate(3px,-3px)}
+.btn{transition:transform .2s ease,background .2s ease,color .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.ticker span{transition:color .2s ease}
+.ticker span:hover{color:var(--burgundy)}
+@keyframes rise-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float-card{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@keyframes slow-spin{to{transform:rotate(360deg)}}
+@keyframes twinkle{0%,100%{opacity:.55;transform:scale(.9) rotate(0)}50%{opacity:1;transform:scale(1.12) rotate(12deg)}}
+@keyframes bar-grow{from{transform:scaleY(.15);opacity:.35}to{transform:scaleY(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* Reference-led editorial layout */
+:root{--paper:#f7f1ec;--nude:#ead9d0;--burgundy:#702d3b;--deep:#4b1d29;--ink:#211b1c;--muted:#786c6c;--line:#d9cbc5;--white:#fffaf7}
+header{position:sticky;top:0;z-index:10;background:#f7f1ecef;backdrop-filter:blur(12px);padding:13px 0}
+.brand{font-size:10px;letter-spacing:.12em;text-transform:uppercase}.monogram{width:25px;height:25px;font-size:12px}.navlinks a{font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.hero{min-height:calc(100vh - 52px);padding:70px 0 55px;grid-template-columns:1.1fr .9fr;gap:45px}
+.hero-name{font:italic clamp(68px,10vw,144px)/.78 Georgia,serif;letter-spacing:-.075em;color:var(--burgundy);margin:0 0 45px}
+.hero-name span{display:block;padding-left:10%}
+.hero .eyebrow,.eyebrow{font-size:9px;letter-spacing:.18em}
+.hero h1{font:clamp(35px,4vw,56px)/.98 Georgia,serif;letter-spacing:-.055em;font-weight:400;margin:22px 0}
+.hero-copy{max-width:450px;font-size:13px;line-height:1.8}
+.btn{font-size:10px;letter-spacing:.07em;text-transform:uppercase}
+.art{padding:22px;min-height:270px;max-width:430px;justify-self:end;width:100%;box-shadow:10px 10px 0 var(--deep);transform:rotate(1deg)}
+.art-title{font:clamp(30px,3vw,45px)/.95 Georgia,serif;margin:26px 0}.art-title em{color:var(--burgundy)}
+.art p{font-size:11px}.bars{height:58px}
+.ticker{padding:19px 0;font:italic clamp(22px,3.2vw,39px)/1.2 Georgia,serif;overflow:hidden;white-space:nowrap}
+.ticker .wrap{display:flex;justify-content:space-between;gap:28px;min-width:900px}.ticker span:nth-child(even){color:var(--muted)}
+section.content{padding:90px 0}.section-head{display:grid;grid-template-columns:1fr .8fr;gap:40px;align-items:end;margin-bottom:38px}
+.section-head h2,.skills h2,.about h2,.contact h2{font:clamp(42px,6vw,76px)/.92 Georgia,serif;letter-spacing:-.06em;font-weight:400}
+.section-head h2 em{color:var(--burgundy)}
+.projects{gap:45px 24px}.cover{aspect-ratio:1.65;min-height:0}.cover-title{font:clamp(31px,4vw,51px)/.95 Georgia,serif}
+.project-body{padding:18px 0}.project h3{font:clamp(25px,3vw,36px)/1.05 Georgia,serif;font-weight:400}
+.project p{font-size:12px;line-height:1.8}.tag{font-size:9px}.project-link{font:italic 23px Georgia,serif;padding-top:13px}
+.about{background:var(--burgundy);padding:85px 0;position:relative;overflow:hidden}.about:after{content:"ABOUT";position:absolute;right:-20px;top:-50px;font:clamp(110px,22vw,290px)/1 Georgia,serif;color:#ffffff08;pointer-events:none}
+.about-grid{position:relative;z-index:1}.about h2{font-size:clamp(44px,6vw,76px)}.about-copy{font-size:13px;line-height:1.9}.quote{font-size:23px}
+.skill{font-size:12px}.contact{padding:80px 0}.contact-grid{display:grid;grid-template-columns:1fr .8fr;gap:35px}
+.contact h2{font-size:clamp(55px,8vw,104px);max-width:650px}.contact p{font-size:12px}.contact .email{font:italic clamp(17px,2vw,25px) Georgia,serif;color:var(--deep);overflow-wrap:anywhere}
+.contact .btn{border-radius:50%;width:78px;height:78px;display:grid;place-items:center;text-align:center;padding:8px;font-size:8px}
+footer{font-size:10px}
+@media(max-width:800px){.hero{min-height:auto;grid-template-columns:1fr;gap:40px;padding:65px 0}.hero-name{font-size:clamp(68px,15vw,120px);margin-bottom:35px}.art{justify-self:start;max-width:500px}.section-head{grid-template-columns:1fr;gap:10px}.about-grid,.skills-grid,.contact-grid{grid-template-columns:1fr;gap:25px}.contact h2{font-size:clamp(54px,11vw,90px)}}
+@media(max-width:560px){.wrap{width:calc(100% - 28px)}.navlinks{gap:10px}.navlinks a{font-size:8px}.hero{padding:48px 0}.hero-name{font-size:clamp(60px,17vw,88px)}.projects{grid-template-columns:1fr;gap:30px}.cover{aspect-ratio:1.5}section.content{padding:60px 0}.skills-list{grid-template-columns:1fr}.about{padding:62px 0}.contact{padding:58px 0}.contact .btn{width:65px;height:65px}}
+
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#home"><span class="monogram">CA</span>Claudia Al-Amir</a><nav class="navlinks"><a href="#work">Selected work</a><a href="#about">About</a><a class="outline" href="#contact">Let's connect ↗</a></nav></div></header>
+<main>
+<section class="wrap hero" id="home"><div><p class="hero-name">Claudia<span>Al-Amir</span></p><span class="eyebrow">Data analyst · Portfolio</span><h1>Finding the story<br>inside the <em>data.</em></h1><p class="hero-copy">I turn data into clear insights, thoughtful visualizations, and practical business recommendations using Excel, Power BI, SQL, Python, and Tableau.</p><div class="actions"><a class="btn primary" href="#work">Explore my work ↘</a><a class="btn secondary" href="#contact">Let's connect ↗</a></div></div><div class="art"><div class="art-top"><span>Insight / 001</span><span>CA—DA</span></div><div class="art-title">Numbers<br>with a<br><em>point of view.</em></div><p class="muted">Analysis is more than a report. It is a way to ask better questions.</p><div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></section>
+<div class="ticker"><div class="wrap"><span>Excel</span><span>Power BI</span><span>SQL</span><span>Python</span><span>Tableau</span><span>Data storytelling</span></div></div>
+<section class="content wrap" id="work"><div class="section-head"><div><span class="eyebrow">Selected work</span><h2>Projects<br><em>with purpose.</em></h2></div><p>A growing collection of analytical projects focused on business performance, useful insights, and clear communication.</p></div><div class="projects">
+<article class="project"><div class="cover"><div class="cover-top"><span>01 / Excel</span><span>Sales analysis</span></div><span class="cover-num">01</span><div class="cover-title">Staples Inc.</div></div><div class="project-body"><span class="type">Excel · Business analysis</span><h3>Sales Performance Analysis</h3><p>An Excel-based sales performance review focused on identifying business trends and turning raw figures into clear, decision-ready findings.</p><div class="tags"><span class="tag">Excel</span><span class="tag">Data analysis</span><span class="tag">Business insights</span></div><a class="project-link" href="https://github.com/claudiaalamir21-tech/Staples-Inc--Sales-Perfomance-Analysis-By-Excel" target="_blank" rel="noreferrer">Explore repository <span>↗</span></a></div></article>
+<article class="project"><div class="cover"><div class="cover-top"><span>02 / Excel</span><span>Sales analysis</span></div><span class="cover-num">02</span><div class="cover-title">H2H Sales</div></div><div class="project-body"><span class="type">Excel · Sales performance</span><h3>H2H Sales Analysis</h3><p>A structured sales analysis supported by a presentation and report, bringing the project findings together in a clear business-focused narrative.</p><div class="tags"><span class="tag">Excel</span><span class="tag">Reporting</span><span class="tag">Analysis</span></div><a class="project-link" href="https://github.com/claudiaalamir21-tech/H2H-sales-analysis-by-excel" target="_blank" rel="noreferrer">Explore repository <span>↗</span></a></div></article>
+<article class="project"><div class="cover"><div class="cover-top"><span>03 / Power BI</span><span>Executive report</span></div><span class="cover-num">03</span><div class="cover-title">Canyon Bikes</div></div><div class="project-body"><span class="type">Power BI · Business intelligence</span><h3>Sales Performance Dashboard</h3><p>A multi-page interactive report examining sales and profitability, product performance, customer behavior, and returns to support a broader view of business performance.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">DAX</span></div><a class="project-link" href="https://github.com/claudiaalamir21-tech/Canyon-sales-performance-analysis-pbi" target="_blank" rel="noreferrer">Explore repository <span>↗</span></a></div></article>
+<article class="project"><div class="cover"><div class="cover-top"><span>04 / Power BI</span><span>Marketing analysis</span></div><span class="cover-num">04</span><div class="cover-title">Hive Analytics</div></div><div class="project-body"><span class="type">Power BI · Marketing performance</span><h3>Marketing Performance Analysis</h3><p>An interactive marketing report examining campaign effectiveness, budget utilization, product performance, and customer value to identify opportunities to improve marketing efficiency.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">DAX</span><span class="tag">Marketing analytics</span></div><a class="project-link" href="https://github.com/claudiaalamir21-tech/Hive-analytics-marketing-analysis" target="_blank" rel="noreferrer">Explore repository <span>↗</span></a></div></article>
+<article class="project"><div class="cover"><div class="cover-top"><span>05 / Power BI</span><span>Supply chain analysis</span></div><span class="cover-num">05</span><div class="cover-title">Supply Chain</div></div><div class="project-body"><span class="type">Power BI · Supply chain intelligence</span><h3>Supply Chain Performance Analysis</h3><p>An interactive, multi-page report examining delivery reliability, sales and profit, product performance, markets, customer behavior, and pending orders. It highlights operational risks and translates the analysis into practical recommendations.</p><div class="tags"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">DAX</span><span class="tag">Logistics analytics</span></div><a class="project-link" href="https://github.com/claudiaalamir21-tech/Amazon-Supply-chain-performance-Analysis" target="_blank" rel="noreferrer">Explore repository <span>↗</span></a></div></article>
+</div></section>
+<section class="about" id="about"><div class="wrap about-grid"><div><span class="eyebrow">A little about me</span><h2>Analytical thinking.<br>Human perspective.</h2></div><div class="about-copy"><p>I'm Claudia Al-Amir, an aspiring data analyst interested in turning complex information into clear, useful stories. I enjoy exploring business questions, finding patterns in data, and presenting findings in a way that supports better decisions.</p><p>My toolkit includes Excel and Power BI for analysis and visualization, SQL for working with structured data, Python for data analysis and preparation, and Tableau for visual storytelling. Through hands-on projects and continuous learning, I’m building my ability to move from raw data to clear findings, key insights, and useful recommendations.</p><div class="quote">Good analysis doesn't stop at what happened. It helps us understand what to do next.</div></div></div></section>
+<section class="content wrap" id="skills"><div class="skills-grid"><div><span class="eyebrow">Toolkit</span><h2>Tools I use.<br>Skills I build.</h2><p class="muted">My toolkit grows with every project. These are the methods and tools represented in my current portfolio.</p></div><div class="skills-list">
+<div class="skill"><span>01</span>Microsoft Excel</div>
+<div class="skill"><span>02</span>Microsoft Power BI</div>
+<div class="skill"><span>03</span>SQL</div>
+<div class="skill"><span>04</span>Python</div>
+<div class="skill"><span>05</span>Tableau</div>
+<div class="skill"><span>06</span>Power Query</div>
+<div class="skill"><span>07</span>DAX measures</div>
+<div class="skill"><span>08</span>Data cleaning &amp; preparation</div>
+<div class="skill"><span>09</span>Data visualization</div>
+<div class="skill"><span>10</span>Analytical storytelling</div>
+</div></div></div></section>
+<section class="contact" id="contact"><div class="wrap contact-grid"><div><span class="eyebrow">Have a question or an opportunity?</span><h2>Let's turn <em>data into</em> direction.</h2><p>I'd love to connect with people who value curiosity, clear thinking, and data-informed decisions.</p><a class="email" href="mailto:claudiaalamir21@gmail.com">claudiaalamir21@gmail.com ↗</a></div><div class="actions"><a class="btn primary" href="mailto:claudiaalamir21@gmail.com">Email me</a><a class="btn secondary" href="https://www.linkedin.com/in/claudia-al-amir-131199424" target="_blank" rel="noreferrer">LinkedIn</a><a class="btn secondary" href="https://github.com/claudiaalamir21-tech" target="_blank" rel="noreferrer">GitHub</a></div></div></section>
+</main><footer><div class="wrap foot"><span>© <span id="year"></span> Claudia Al-Amir. Built with care.</span><span><a href="#home">Back to top ↑</a><a href="https://github.com/claudiaalamir21-tech" target="_blank" rel="noreferrer">GitHub ↗</a></span></div></footer><script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
