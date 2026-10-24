@@ -196,16 +196,16 @@ export function Work() {
 
   return (
     <section id="work" className="relative">
-      <div className="mx-auto max-w-[1500px] px-5 pt-28 md:px-10 md:pt-36">
+      <div className="mx-auto max-w-[1500px] px-5 pt-24 pb-16 md:px-10 md:pt-28 md:pb-24">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
             <Reveal>
               <span className="label text-wine">Selected work</span>
             </Reveal>
-            <h2 className="display mt-6 text-[clamp(3.6rem,9vw,8.5rem)] text-deep">
+            <h2 className="display mt-5 text-[clamp(3.3rem,7.8vw,7.5rem)] leading-[0.92] text-deep">
               <Reveal delay={0.05}>Projects</Reveal>
               <Reveal delay={0.12}>
-                <span className="pl-[8vw] italic text-wine">with purpose.</span>
+                <span className="block pl-[8vw] italic text-wine">with purpose.</span>
               </Reveal>
             </h2>
             <Reveal delay={0.2}>
