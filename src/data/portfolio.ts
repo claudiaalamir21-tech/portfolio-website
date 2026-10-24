@@ -2,9 +2,11 @@ const asset = (filename: string) => ({ url: `${import.meta.env.BASE_URL}assets/$
 const staplesShot = asset("staples-dashboard.png");
 const h2hShot = asset("h2h-dashboard.png");
 const cExec = asset("canyon-executive-overview.jpg");
+const cLanding = asset("landing-page.jpg");
 const cProd = asset("canyon-product-analysis.jpg");
 const cCust = asset("canyon-customer-analysis.jpg");
 const cRec = asset("canyon-recommendations.jpg");
+const hLanding = asset("01-landing-page.jpg");
 const hCamp = asset("hive-02-campaign-analysis.jpg");
 const hProd = asset("hive-03-product-analysis.jpg");
 const hCust = asset("hive-04-customer-analysis.jpg");
@@ -144,6 +146,7 @@ export const projects: Project[] = [
     art: "dashboard",
     layout: "spread",
     shots: [
+      { src: cLanding.url, label: "Landing page", alt: "Canyon Bikes Power BI report landing page", w: 1920, h: 1080 },
       { src: cExec.url, label: "Executive overview", alt: "Canyon Power BI executive overview page", w: 1920, h: 1080 },
       { src: cProd.url, label: "Product analysis", alt: "Canyon Power BI product analysis page", w: 1920, h: 1080 },
       { src: cCust.url, label: "Customer analysis", alt: "Canyon Power BI customer analysis page", w: 1920, h: 1080 },
@@ -168,6 +171,7 @@ export const projects: Project[] = [
     art: "dashboard",
     layout: "index",
     shots: [
+      { src: hLanding.url, label: "Landing page", alt: "Hive Analytics Power BI report landing page", w: 640, h: 360 },
       { src: hCamp.url, label: "Campaign", alt: "Hive Analytics campaign analysis page", w: 640, h: 360 },
       { src: hProd.url, label: "Product", alt: "Hive Analytics product analysis page", w: 640, h: 360 },
       { src: hCust.url, label: "Customer", alt: "Hive Analytics customer analysis page", w: 640, h: 360 },
