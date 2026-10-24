@@ -115,15 +115,17 @@ function ProjectSection({ p, onOpen }: { p: Project; onOpen: (p: Project) => voi
     >
       <div className={"mx-auto grid max-w-[1500px] gap-10 md:grid-cols-12 md:items-center md:gap-12 " + (reverse ? "md:[&>div:first-child]:order-2" : "")}>
         <div className="group md:col-span-7">
-          <button
-            type="button"
-            onClick={() => onOpen(p)}
-            data-cursor="view"
-            aria-label={`Open ${p.client} case study`}
-            className="block w-full text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine"
-          >
-            {preview}
-          </button>
+          {isPowerBI ? preview : (
+            <button
+              type="button"
+              onClick={() => onOpen(p)}
+              data-cursor="view"
+              aria-label={`Open ${p.client} case study`}
+              className="block w-full text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine"
+            >
+              {preview}
+            </button>
+          )}
         </div>
         <div className="md:col-span-5">
           <span className={"label flex items-center gap-3 text-[0.6rem] " + label}>
