@@ -1,6 +1,7 @@
 const asset = (filename: string) => ({ url: `${import.meta.env.BASE_URL}assets/${filename}` });
 const staplesShot = asset("staples-dashboard.png");
 const h2hShot = asset("h2h-dashboard.png");
+const cLanding = asset("canyon-landing-page.jpg");
 const cExec = asset("canyon-executive-overview.jpg");
 const cProd = asset("canyon-product-analysis.jpg");
 const cCust = asset("canyon-customer-analysis.jpg");
@@ -146,6 +147,7 @@ export const projects: Project[] = [
     art: "dashboard",
     layout: "spread",
     shots: [
+      { src: cLanding.url, label: "Landing page", alt: "Canyon Bikes Power BI report landing page", w: 1920, h: 1080 },
       { src: cExec.url, label: "Executive overview", alt: "Canyon Power BI executive overview page", w: 1920, h: 1080 },
       { src: cProd.url, label: "Product analysis", alt: "Canyon Power BI product analysis page", w: 1920, h: 1080 },
       { src: cCust.url, label: "Customer analysis", alt: "Canyon Power BI customer analysis page", w: 1920, h: 1080 },
