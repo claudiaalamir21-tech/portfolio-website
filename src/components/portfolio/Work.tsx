@@ -218,6 +218,84 @@ function Flagship({ p, onOpen }: { p: Project; onOpen: (p: Project) => void }) {
   );
 }
 
+
+// A consistent full-width project section: preview left, project details right.
+function ProjectSection({ p, onOpen }: { p: Project; onOpen: (p: Project) => void }) {
+  const preview = p.index === "04"
+    ? <HiveVisual p={p} />
+    : p.index === "05"
+      ? <SupplyVisual p={p} />
+      : <Dash s={p.shots[0]!} className="shadow-[10px_10px_0_var(--nude)]" eager={p.index === "01"} />;
+
+  const metrics = (p.metrics ?? []).filter((m) => HEADLINE[p.index]?.includes(m.label));
+
+  return (
+    <article
+      id={`project-${p.index}`}
+      data-project={p.index}
+      className="scroll-mt-20 border-t border-line px-5 py-16 md:px-10 md:py-24"
+    >
+      <div className="mx-auto grid max-w-[1500px] gap-10 md:grid-cols-12 md:items-center md:gap-12">
+        <div className="group md:col-span-7">
+          <button
+            type="button"
+            onClick={() => onOpen(p)}
+            data-cursor="view"
+            aria-label={`${p.client} — view case study`}
+            className="block w-full text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine"
+          >
+            {preview}
+          </button>
+          {p.index === "04" && (
+            <p className="label mt-3 text-[0.55rem] text-muted-foreground">Select a tab to preview report pages</p>
+          )}
+        </div>
+
+        <div className="md:col-span-5">
+          <Head p={p} big />
+          <p className="label mt-5 text-[0.6rem] text-wine">{tools(p)}</p>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">{p.description}</p>
+
+          {metrics.length > 0 && (
+            <dl className="mt-6 grid grid-cols-2 gap-4">
+              {metrics.map((m) => (
+                <div key={m.label} className="border-t border-line pt-3">
+                  <dd className="display text-3xl text-deep">{m.value}</dd>
+                  <dt className="label mt-2 text-[0.55rem] text-muted-foreground">{m.label}</dt>
+                </div>
+              ))}
+            </dl>
+          )}
+
+          <p className="label mt-5 text-[0.55rem] leading-relaxed text-muted-foreground">
+            {p.index === "05" ? "Collaborative · Team leader · Not affiliated with Amazon" : p.disclaimer}
+          </p>
+
+          <div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-3">
+            <button
+              type="button"
+              onClick={() => onOpen(p)}
+              className="label inline-flex min-h-11 items-center gap-3 text-wine focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine"
+            >
+              <span className="link-underline pb-1">View case study</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+            <a
+              href={p.href}
+              target="_blank"
+              rel="noreferrer"
+              className="label inline-flex min-h-11 items-center gap-3 text-deep focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine"
+            >
+              <span className="link-underline pb-1">View repository</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export function Work() {
   const [open, setOpen] = useState<Project | null>(null);
   const [active, setActive] = useState<string | null>(null);
@@ -277,30 +355,11 @@ export function Work() {
           </Reveal>
         </div>
 
-        <div className="grid gap-16 py-20 md:grid-cols-12 md:gap-10 md:py-28">
-          {p1 && <Card p={p1} onOpen={setOpen} wide />}
-          {p2 && (
-            <div className="md:col-span-5 md:pt-32">
-              <Card p={p2} onOpen={setOpen} />
-            </div>
-          )}
-        </div>
+        {projects.map((p) => (
+          <ProjectSection key={p.index} p={p} onOpen={setOpen} />
+        ))}
       </div>
 
-      {p3 && <Flagship p={p3} onOpen={setOpen} />}
-
-      <div className="mx-auto grid max-w-[1500px] gap-16 px-5 py-20 md:grid-cols-12 md:gap-10 md:px-10 md:py-28">
-        {p4 && (
-          <div className="md:col-span-6">
-            <Card p={p4} onOpen={setOpen} wide extra={<HiveVisual p={p4} />} />
-          </div>
-        )}
-        {p5 && (
-          <div className="md:col-span-6 md:pt-16">
-            <Card p={p5} onOpen={setOpen} wide extra={<SupplyVisual p={p5} />} />
-          </div>
-        )}
-      </div>
 
       <AnimatePresence>
         {active && (
