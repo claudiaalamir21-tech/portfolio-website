@@ -56,6 +56,7 @@ export function About() {
                 {l}
               </Reveal>
             ))}
+            <Reveal delay={quote.length * 0.12}>”</Reveal>
           </p>
         </blockquote>
       </div>
