@@ -1,0 +1,198 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Claudia Al-Amir — editorial burgundy / cream system.
+ * All colors are oklch tokens; components only use semantic utilities.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Editorial palette */
+  --color-paper: var(--paper);
+  --color-nude: var(--nude);
+  --color-wine: var(--wine);
+  --color-deep: var(--deep);
+  --color-ink: var(--ink);
+  --color-ivory: var(--ivory);
+  --color-rose: var(--rose);
+  --color-line: var(--line);
+
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+
+  --ease-lux: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-out-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --radius: 0px;
+
+  --paper: oklch(0.963 0.011 62);      /* #F7F2ED */
+  --nude: oklch(0.889 0.025 46);       /* #E8D8CF */
+  --wine: oklch(0.392 0.098 10);       /* #702D3B */
+  --deep: oklch(0.284 0.07 8);         /* #4B1D29 */
+  --ink: oklch(0.224 0.008 10);        /* #211B1C */
+  --ivory: oklch(0.994 0.005 70);      /* #FFFDFA */
+  --rose: oklch(0.78 0.045 20);        /* dusty rose */
+  --line: oklch(0.866 0.018 40);       /* #DFD2CC */
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--ivory);
+  --card-foreground: var(--ink);
+  --popover: var(--ivory);
+  --popover-foreground: var(--ink);
+  --primary: var(--wine);
+  --primary-foreground: var(--paper);
+  --secondary: var(--nude);
+  --secondary-foreground: var(--deep);
+  --muted: var(--nude);
+  --muted-foreground: oklch(0.52 0.015 10); /* #74686A */
+  --accent: var(--nude);
+  --accent-foreground: var(--deep);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--paper);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--wine);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--wine);
+    color: var(--paper);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    html.has-cursor,
+    html.has-cursor * {
+      cursor: none !important;
+    }
+  }
+}
+
+/* Typographic utilities */
+@utility label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.88;
+}
+
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px currentColor;
+}
+
+@utility text-outline-wine {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--wine);
+}
+
+@utility mask-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+@utility grain {
+  &::after {
+    content: "";
+    position: fixed;
+    inset: -50%;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    animation: grain-shift 1.2s steps(4) infinite;
+  }
+}
+
+@utility link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.6s var(--ease-lux);
+  &:hover {
+    background-size: 100% 1px;
+  }
+}
+
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-3%, 2%); }
+  50% { transform: translate(2%, -3%); }
+  75% { transform: translate(-2%, -1%); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes slow-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
