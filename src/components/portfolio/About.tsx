@@ -35,7 +35,7 @@ export function About() {
             </Reveal>
           </h2>
         </div>
-        <div className="space-y-6 text-[15px] leading-relaxed text-nude md:col-span-5 md:col-start-8 md:pt-14">
+        <div className="space-y-6 text-lg leading-relaxed text-nude md:col-span-5 md:col-start-8 md:pt-14 md:text-xl">
           <p>
             I'm Claudia Al-Amir, a data analyst focused on turning complex information into clear, useful stories. I enjoy
             exploring business questions, finding patterns in data, and presenting findings in a way that supports better decisions.
