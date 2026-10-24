@@ -2,7 +2,6 @@ const asset = (filename: string) => ({ url: `${import.meta.env.BASE_URL}assets/$
 const staplesShot = asset("staples-dashboard.png");
 const h2hShot = asset("h2h-dashboard.png");
 const cExec = asset("canyon-executive-overview.jpg");
-const cLanding = asset("landing-page.jpg");
 const cProd = asset("canyon-product-analysis.jpg");
 const cCust = asset("canyon-customer-analysis.jpg");
 const cRec = asset("canyon-recommendations.jpg");
@@ -11,6 +10,7 @@ const hCamp = asset("hive-02-campaign-analysis.jpg");
 const hProd = asset("hive-03-product-analysis.jpg");
 const hCust = asset("hive-04-customer-analysis.jpg");
 const hRec = asset("hive-05-business-recommendations.jpg");
+const sLanding = asset("landing-page.jpg");
 const sExec = asset("sc-executive-overview.jpg");
 const sSales = asset("sc-sales-profit-performance.jpg");
 const sProd = asset("sc-product-analysis.jpg");
@@ -146,7 +146,6 @@ export const projects: Project[] = [
     art: "dashboard",
     layout: "spread",
     shots: [
-      { src: cLanding.url, label: "Landing page", alt: "Canyon Bikes Power BI report landing page", w: 1920, h: 1080 },
       { src: cExec.url, label: "Executive overview", alt: "Canyon Power BI executive overview page", w: 1920, h: 1080 },
       { src: cProd.url, label: "Product analysis", alt: "Canyon Power BI product analysis page", w: 1920, h: 1080 },
       { src: cCust.url, label: "Customer analysis", alt: "Canyon Power BI customer analysis page", w: 1920, h: 1080 },
@@ -196,6 +195,7 @@ export const projects: Project[] = [
     art: "dashboard",
     layout: "sequence",
     shots: [
+      { src: sLanding.url, label: "Landing page", alt: "Amazon-inspired Supply Chain Power BI report landing page", w: 1920, h: 1080 },
       { src: sExec.url, label: "Executive", alt: "Supply chain executive overview page", w: 1328, h: 734 },
       { src: sSales.url, label: "Sales & profit", alt: "Supply chain sales and profit page", w: 1328, h: 734 },
       { src: sProd.url, label: "Products", alt: "Supply chain product analysis page", w: 1328, h: 734 },
