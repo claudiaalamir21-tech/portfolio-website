@@ -73,21 +73,24 @@ function PowerBIVisual({ p, dark = false }: { p: Project; dark?: boolean }) {
         <img src={shot.src} alt={shot.alt} width={shot.w} height={shot.h} loading="lazy" className="block h-auto w-full" />
       </div>
       <div className="mt-5 grid grid-cols-3 gap-3 sm:grid-cols-4">
-        {p.shots.map((s, i) => (
-          <button
-            type="button"
-            key={s.label}
-            onClick={() => setActive(i)}
-            aria-pressed={active === i}
-            aria-label={`Preview ${s.label}`}
-            className={"group text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine " + (active === i ? "opacity-100" : "opacity-65 transition-opacity hover:opacity-100")}
-          >
-            <span className={"block overflow-hidden border-2 " + (active === i ? (dark ? "border-nude" : "border-wine") : (dark ? "border-paper/25" : "border-line"))}>
-              <img src={s.src} alt="" aria-hidden="true" loading="lazy" className="block aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
-            </span>
-            <span className={"label mt-2 block text-[0.48rem] leading-relaxed " + (dark ? "text-nude/80" : "text-deep/70")}>{i === 0 ? "Landing page" : s.label}</span>
-          </button>
-        ))}
+        {p.shots.slice(1).map((s, i) => {
+          const shotIndex = i + 1;
+          return (
+            <button
+              type="button"
+              key={s.label}
+              onClick={() => setActive(shotIndex)}
+              aria-pressed={active === shotIndex}
+              aria-label={`Preview ${s.label}`}
+              className={"group text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wine " + (active === shotIndex ? "opacity-100" : "opacity-65 transition-opacity hover:opacity-100")}
+            >
+              <span className={"block overflow-hidden border-2 " + (active === shotIndex ? (dark ? "border-nude" : "border-wine") : (dark ? "border-paper/25" : "border-line"))}>
+                <img src={s.src} alt="" aria-hidden="true" loading="lazy" className="block aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+              </span>
+              <span className={"label mt-2 block text-[0.48rem] leading-relaxed " + (dark ? "text-nude/80" : "text-deep/70")}>{s.label}</span>
+            </button>
+          );
+        })}
       </div>
       <p className={"label mt-3 text-[0.5rem] " + (dark ? "text-nude/60" : "text-deep/60")}>Select a page preview to explore the report</p>
     </div>
