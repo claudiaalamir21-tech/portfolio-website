@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Reveal } from "./Reveal";
 
-const quote = ["Good analysis doesn't stop", "at what happened. It helps us", "understand what to do next."];
+const quote = ["Good analysis doesn't stop", "at what happened. It helps us", "understand what to do next.”"];
 
 export function About() {
   const ref = useRef<HTMLElement>(null);
@@ -56,7 +56,6 @@ export function About() {
                 {l}
               </Reveal>
             ))}
-            <Reveal delay={quote.length * 0.12}>”</Reveal>
           </p>
         </blockquote>
       </div>
