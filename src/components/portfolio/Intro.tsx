@@ -24,7 +24,7 @@ export function Intro() {
       {show && (
         <motion.div
           key="intro"
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-deep"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-wine"
           exit={{ clipPath: "inset(0 0 100% 0)" }}
           transition={{ duration: 0.8, ease }}
           style={{ clipPath: "inset(0 0 0% 0)" }}
@@ -38,7 +38,7 @@ export function Intro() {
             style={{ transformOrigin: "top" }}
           />
           <motion.span
-            className="absolute left-0 top-1/2 h-px w-full bg-wine"
+            className="absolute left-0 top-1/2 h-px w-full bg-paper"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ delay: 0.25, duration: 0.7, ease }}
@@ -47,7 +47,7 @@ export function Intro() {
           <div className="relative flex w-full max-w-[1500px] items-center justify-between px-5 md:px-10">
             <span className="mask-line">
               <motion.span
-                className="display block text-7xl text-wine md:text-9xl"
+                className="display block text-7xl text-paper md:text-9xl"
                 initial={{ y: "110%" }}
                 animate={{ y: "0%" }}
                 transition={{ delay: 0.05, duration: 0.7, ease }}
@@ -57,7 +57,7 @@ export function Intro() {
             </span>
             <span className="mask-line">
               <motion.span
-                className="label block text-wine"
+                className="label block text-paper"
                 initial={{ y: "110%" }}
                 animate={{ y: "0%" }}
                 transition={{ delay: 0.5, duration: 0.6, ease }}
