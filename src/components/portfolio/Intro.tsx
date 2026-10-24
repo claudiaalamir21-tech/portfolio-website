@@ -3,18 +3,11 @@ import { useEffect, useState } from "react";
 
 const ease = [0.76, 0, 0.24, 1] as const;
 
-// ~1.5s once-per-session intro: CA → drawn line → masked type → wine panel wipe.
+// Brief intro animation on every page load: CA → drawn line → masked type → panel wipe.
 export function Intro() {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const seen = sessionStorage.getItem("ca-intro");
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (seen || reduce) {
-      setShow(false);
-      return;
-    }
-    sessionStorage.setItem("ca-intro", "1");
     const t = window.setTimeout(() => setShow(false), 1400);
     return () => window.clearTimeout(t);
   }, []);
